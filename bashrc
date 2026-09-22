@@ -27,11 +27,11 @@ case $- in *i*)
       *) PROMPT_COMMAND+=(_ba_prompt_sp) ;;
     esac
   fi
-;; esac
 
-if [ -z "${BASH_COMPLETION_VERSINFO:-}" ] && [ -r /usr/share/bash-completion/bash_completion ]; then
-  . /usr/share/bash-completion/bash_completion
-fi
+  if [ -z "${BASH_COMPLETION_VERSINFO:-}" ] && [ -r /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  fi
+;; esac
 
 export LD_PRELOAD=""
 export EDITOR="vim"
