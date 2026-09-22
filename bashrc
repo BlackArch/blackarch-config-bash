@@ -29,6 +29,10 @@ case $- in *i*)
   fi
 ;; esac
 
+if [ -z "${BASH_COMPLETION_VERSINFO:-}" ] && [ -r /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+fi
+
 export LD_PRELOAD=""
 export EDITOR="vim"
 
